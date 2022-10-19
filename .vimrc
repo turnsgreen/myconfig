@@ -1,6 +1,7 @@
 set number
 set nocompatible
 set bg=dark
+colorscheme darkblue
 filetype off 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
