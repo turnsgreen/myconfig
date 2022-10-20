@@ -54,7 +54,9 @@ fi
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
-PS1='\e[1;32m${debian_chroot:+($debian_chroot)}\u\e@\h\e[m:\w\$ '
+#PS1='\e[1;32m${debian_chroot:+($debian_chroot)}\u\e@\h\e[m:\w\$ '
+#PS1='${debian_chroot:+($debian_chroot)}\e[1;32m\u\e@\h\e[m:\w\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -106,8 +108,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
-
-set number
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
